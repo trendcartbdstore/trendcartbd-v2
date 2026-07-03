@@ -255,3 +255,61 @@ grid-template-columns:1fr;
 }
 
 }
+.flash-sale{
+background:linear-gradient(90deg,#ff6b00,#ff9800);
+padding:15px;
+text-align:center;
+color:#fff;
+font-size:22px;
+font-weight:600;
+margin:20px 8%;
+border-radius:15px;
+box-shadow:0 15px 30px rgba(255,107,0,.3);
+animation:flashGlow 2s infinite alternate;
+}
+
+@keyframes flashGlow{
+
+from{
+box-shadow:0 0 10px #ff9800;
+}
+
+to{
+box-shadow:0 0 35px #ff9800;
+}
+
+}
+
+.card{
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px) scale(1.03);
+
+}
+
+.dark{
+
+background:#111;
+
+color:white;
+
+}
+
+.dark header{
+
+background:#1a1a1a;
+
+}
+
+.dark .card{
+
+background:#222;
+
+color:white;
+
+}
