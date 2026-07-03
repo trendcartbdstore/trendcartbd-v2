@@ -1689,4 +1689,26 @@ overflow:auto;
 
 border-radius:18px;
 
+}.input{
+
+width:100%;
+
+padding:15px;
+
+border:1px solid var(--border);
+
+border-radius:14px;
+
+font-size:16px;
+
+background:var(--surface);
+
+color:var(--text);
+
+}
+
+.input:focus{
+
+border-color:var(--primary);
+
 }
