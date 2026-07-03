@@ -1,256 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>Shop | Trend Cart BD</title>
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/variables.css">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/mobile.css">
 
-<style>
-
-body{
-background:#f5f7fb;
-font-family:Poppins,sans-serif;
-}
-
-.top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 8%;
-}
-
-.search{
-width:350px;
-padding:14px;
-border:none;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-font-size:16px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-padding:30px 8%;
-}
-
-.card{
-background:#fff;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 12px 30px rgba(0,0,0,.08);
-transition:.35s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card img{
-width:100%;
-height:230px;
-object-fit:cover;
-}
-
-.info{
-padding:18px;
-}
-
-.price{
-font-size:24px;
-font-weight:700;
-color:#0b3ea9;
-}
-
-.old{
-text-decoration:line-through;
-color:#888;
-margin-left:10px;
-}
-
-button{
-width:100%;
-padding:14px;
-border:none;
-background:#0b3ea9;
-color:white;
-border-radius:12px;
-cursor:pointer;
-margin-top:15px;
-font-size:16px;
-}
-
-button:hover{
-background:#ff6b00;
-}
-
-.badge{
-position:absolute;
-background:#ff3b30;
-color:#fff;
-padding:8px 15px;
-border-radius:30px;
-margin:15px;
-font-size:13px;
-font-weight:700;
-}
-
-.wrap{
-position:relative;
-}
-
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<div class="top">
+<header class="header">
 
-<h1>🛍 Shop</h1>
+<div class="container">
 
-<input
-type="text"
-class="search"
-id="search"
-placeholder="Search Product...">
+<a href="index.html" class="logo">
 
-</div>
+Trend<span>Cart</span> BD
 
-<div class="grid" id="products"></div>
+</a>
 
-<script>
+<nav class="nav">
 
-const items=[
+<a href="index.html">Home</a>
 
-{
-id:1,
-name:"Portable Blender",
-price:1290,
-old:1690,
-image:"https://picsum.photos/400/300?1"
-},
+<a href="shop.html" class="active">Shop</a>
 
-{
-id:2,
-name:"Mini Fan",
-price:990,
-old:1290,
-image:"https://picsum.photos/400/300?2"
-},
+<a href="#">Categories</a>
 
-{
-id:3,
-name:"LED Light",
-price:790,
-old:1090,
-image:"https://picsum.photos/400/300?3"
-},
+<a href="#">Flash Sale</a>
 
-{
-id:4,
-name:"Phone Holder",
-price:490,
-old:690,
-image:"https://picsum.photos/400/300?4"
-},
+<a href="#">Affiliate</a>
 
-{
-id:5,
-name:"Neck Massager",
-price:1490,
-old:1990,
-image:"https://picsum.photos/400/300?5"
-},
+<a href="contact.html">Contact</a>
 
-{
-id:6,
-name:"Vacuum Cleaner",
-price:2290,
-old:2790,
-image:"https://picsum.photos/400/300?6"
-}
+</nav>
 
-];
+<div class="header-action">
 
-const box=document.getElementById("products");
+<div class="search-box">
 
-function load(data){
+<input type="search" id="shopSearch" placeholder="Search Product...">
 
-box.innerHTML="";
-
-data.forEach(p=>{
-
-box.innerHTML+=`
-
-<div class="card">
-
-<div class="wrap">
-
-<div class="badge">
-
-HOT
+<i class="fa-solid fa-magnifying-glass"></i>
 
 </div>
 
-<img src="${p.image}">
+<a href="wishlist.html" class="icon-btn">
 
-</div>
+<i class="fa-regular fa-heart"></i>
 
-<div class="info">
+<span class="badge">0</span>
 
-<h3>${p.name}</h3>
+</a>
 
-<p>
+<a href="cart.html" class="icon-btn">
 
-<span class="price">৳${p.price}</span>
+<i class="fa-solid fa-cart-shopping"></i>
 
-<span class="old">৳${p.old}</span>
+<span class="badge">0</span>
 
-</p>
+</a>
 
-<button onclick="add('${p.name}')">
+<a href="login.html" class="profile">
 
-🛒 Add To Cart
+<img src="assets/images/user.png" alt="User">
 
-</button>
+</a>
+
+<div class="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
 
 </div>
 
 </div>
 
-`;
+</div>
 
-});
+</header>
 
-}
+<section class="products">
 
-load(items);
+<div class="container">
 
-document.getElementById("search").onkeyup=e=>{
+<div class="section-title">
 
-const value=e.target.value.toLowerCase();
+<h2>All Products</h2>
 
-load(items.filter(p=>
+</div>
 
-p.name.toLowerCase().includes(value)
+<div class="product-grid" id="shopProducts">
 
-));
+</div>
 
-}
+</div>
 
-function add(name){
+</section>
 
-alert(name+" Added Successfully");
+<footer class="footer">
 
-}
+<div class="container">
 
-</script>
+<div class="footer-bottom">
+
+© 2026 Trend Cart BD. All Rights Reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+<nav class="bottom-nav">
+
+<ul>
+
+<li>
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+</li>
+
+<li>
+
+<a class="active" href="shop.html">
+
+<i class="fa-solid fa-store"></i>
+
+Shop
+
+</a>
+
+</li>
+
+<li>
+
+<a href="cart.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Cart
+
+</a>
+
+</li>
+
+<li>
+
+<a href="wishlist.html">
+
+<i class="fa-regular fa-heart"></i>
+
+Wishlist
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-user"></i>
+
+Account
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<script src="assets/js/app.js"></script>
 
 </body>
+
 </html>
