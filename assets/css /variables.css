@@ -1,1 +1,71 @@
+:root{
 
+/*========== COLORS ==========*/
+
+--primary:#0B5FFF;
+--primary-hover:#0848C7;
+--secondary:#FF7A00;
+
+--success:#16A34A;
+--danger:#DC2626;
+--warning:#FACC15;
+
+--white:#FFFFFF;
+--black:#111827;
+
+--background:#F8FAFC;
+--surface:#FFFFFF;
+
+--text:#1F2937;
+--text-light:#6B7280;
+
+--border:#E5E7EB;
+
+
+/*========== FONT ==========*/
+
+--font-logo:"Chunk Five", serif;
+
+--font-bn:"Li Alinur Sangbadpatra 2", sans-serif;
+
+--font-en:"Inter", sans-serif;
+
+
+/*========== SIZE ==========*/
+
+--header-height:70px;
+
+--bottom-nav-height:70px;
+
+--container:1400px;
+
+
+/*========== BORDER RADIUS ==========*/
+
+--radius-xs:6px;
+
+--radius-sm:10px;
+
+--radius-md:14px;
+
+--radius-lg:18px;
+
+--radius-xl:24px;
+
+--radius-full:999px;
+
+
+/*========== SHADOW ==========*/
+
+--shadow-sm:0 4px 12px rgba(0,0,0,.08);
+
+--shadow-md:0 10px 30px rgba(0,0,0,.10);
+
+--shadow-lg:0 20px 45px rgba(0,0,0,.15);
+
+
+/*========== TRANSITION ==========*/
+
+--transition:.30s ease;
+
+}
