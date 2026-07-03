@@ -69,3 +69,75 @@ grid.innerHTML+=`
 });
 
 }
+// Flash Sale Countdown
+
+let time=43200;
+
+setInterval(()=>{
+
+let h=Math.floor(time/3600);
+
+let m=Math.floor((time%3600)/60);
+
+let s=time%60;
+
+const timer=document.getElementById("countdown");
+
+if(timer){
+
+timer.innerHTML=
+
+`${h.toString().padStart(2,"0")} :
+
+${m.toString().padStart(2,"0")} :
+
+${s.toString().padStart(2,"0")}`;
+
+}
+
+if(time>0){
+
+time--;
+
+}
+
+},1000);
+
+
+// Dark Mode
+
+const darkBtn=document.createElement("button");
+
+darkBtn.innerHTML="🌙";
+
+darkBtn.style.position="fixed";
+
+darkBtn.style.right="20px";
+
+darkBtn.style.bottom="20px";
+
+darkBtn.style.width="55px";
+
+darkBtn.style.height="55px";
+
+darkBtn.style.borderRadius="50%";
+
+darkBtn.style.border="none";
+
+darkBtn.style.background="#0b3ea9";
+
+darkBtn.style.color="#fff";
+
+darkBtn.style.fontSize="22px";
+
+darkBtn.style.cursor="pointer";
+
+darkBtn.style.boxShadow="0 10px 25px rgba(0,0,0,.2)";
+
+document.body.appendChild(darkBtn);
+
+darkBtn.onclick=()=>{
+
+document.body.classList.toggle("dark");
+
+};
