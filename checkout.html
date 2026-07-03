@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | Trend Cart BD</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+background:#f5f7fb;
+font-family:Poppins,sans-serif;
+}
+
+.container{
+max-width:700px;
+margin:40px auto;
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+h1{
+color:#0b3ea9;
+margin-bottom:25px;
+}
+
+input,textarea,select{
+
+width:100%;
+padding:15px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px;
+
+}
+
+.payment{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+
+margin:20px 0;
+
+}
+
+.pay{
+
+padding:18px;
+
+border:2px solid #ddd;
+
+border-radius:15px;
+
+cursor:pointer;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.pay:hover{
+
+border-color:#0b3ea9;
+
+}
+
+button{
+
+width:100%;
+
+padding:18px;
+
+background:#0b3ea9;
+
+color:#fff;
+
+border:none;
+
+border-radius:12px;
+
+font-size:18px;
+
+cursor:pointer;
+
+margin-top:20px;
+
+}
+
+button:hover{
+
+background:#ff6b00;
+
+}
+
+.total{
+
+font-size:25px;
+
+font-weight:700;
+
+margin:20px 0;
+
+color:#ff6b00;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Checkout</h1>
+
+<input id="name" placeholder="Full Name">
+
+<input id="phone" placeholder="Mobile Number">
+
+<textarea id="address" placeholder="Full Address"></textarea>
+
+<h3>Select Payment</h3>
+
+<div class="payment">
+
+<label class="pay">
+
+<input type="radio" name="pay" value="Cash On Delivery" checked>
+
+Cash On Delivery
+
+</label>
+
+<label class="pay">
+
+<input type="radio" name="pay" value="bKash">
+
+bKash
+
+</label>
+
+<label class="pay">
+
+<input type="radio" name="pay" value="Nagad">
+
+Nagad
+
+</label>
+
+<label class="pay">
+
+<input type="radio" name="pay" value="Rocket">
+
+Rocket
+
+</label>
+
+</div>
+
+<div class="total">
+
+Total :
+<span id="total">0</span> ৳
+
+</div>
+
+<button onclick="placeOrder()">
+
+Confirm Order
+
+</button>
+
+</div>
+
+<script>
+
+const cart=JSON.parse(localStorage.getItem("trendcart"))||[];
+
+let total=0;
+
+cart.forEach(item=>{
+
+total+=item.price*item.qty;
+
+});
+
+document.getElementById("total").innerHTML=total;
+
+function placeOrder(){
+
+const name=document.getElementById("name").value;
+
+const phone=document.getElementById("phone").value;
+
+const address=document.getElementById("address").value;
+
+const payment=document.querySelector("input[name='pay']:checked").value;
+
+if(!name||!phone||!address){
+
+alert("সব তথ্য পূরণ করুন");
+
+return;
+
+}
+
+let message=`🛍️ Trend Cart BD Order
+
+👤 Name: ${name}
+
+📞 Phone: ${phone}
+
+📍 Address: ${address}
+
+💳 Payment: ${payment}
+
+--------------------
+
+`;
+
+cart.forEach(item=>{
+
+message+=`${item.name}
+
+Qty : ${item.qty}
+
+Price : ৳${item.price}
+
+----------------
+
+`;
+
+});
+
+message+=`Total : ৳${total}`;
+
+window.open(
+
+`https://wa.me/8801315121561?text=${encodeURIComponent(message)}`
+
+);
+
+}
+
+</script>
+
+</body>
+
+</html>
