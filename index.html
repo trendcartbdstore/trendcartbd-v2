@@ -1,152 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Trend Cart BD - Low Price Premium Online Shopping">
+
+<meta name="keywords" content="Trend Cart BD, Bangladesh, Online Shopping, Dropshipping">
+
+<meta name="author" content="Trend Cart BD">
 
 <title>Trend Cart BD</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/images/favicon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/variables.css">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/mobile.css">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<header>
+<!-- HEADER START -->
 
-<section class="flash-sale">
+<header class="header">
 
-<div class="flash-text">
+<div class="container">
 
-🔥 Flash Sale Ends In
+<a href="index.html" class="logo">
 
-<span id="countdown">
+Trend<span>Cart</span> BD
 
-12:00:00
+</a>
 
-</span>
+<nav class="nav">
 
-</div>
+<a href="index.html" class="active">Home</a>
 
-</section>
-
-<div class="logo">
-<h2>Trend <span>Cart BD</span></h2>
-</div>
-
-<nav>
-
-<a href="#">Home</a>
 <a href="shop.html">Shop</a>
+
 <a href="#">Categories</a>
+
 <a href="#">Flash Sale</a>
-<a href="about.html">About</a>
+
+<a href="#">Affiliate</a>
+
+<a href="contact.html">Contact</a>
 
 </nav>
 
-<div class="icons">
+<div class="header-action">
+
+<div class="search-box">
+
+<input
+type="search"
+placeholder="Search Products...">
 
 <i class="fa-solid fa-magnifying-glass"></i>
 
-<i class="fa-solid fa-heart"></i>
+</div>
 
-<a href="cart.html" class="cart-icon">
+<a href="wishlist.html" class="icon-btn">
+
+<i class="fa-regular fa-heart"></i>
+
+<span class="badge">0</span>
+
+</a>
+
+<a href="cart.html" class="icon-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
 
-<span class="cart-count">0</span>
+<span class="badge">0</span>
 
 </a>
+
+<a href="login.html" class="profile">
+
+<img src="assets/images/user.png">
+
+</a>
+
+<div class="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+</div>
 
 </div>
 
 </header>
 
+<!-- HEADER END -->
+
+<!-- HERO START -->
+
 <section class="hero">
 
-<div class="hero-text">
+<div class="container">
+
+<div class="hero-banner">
+
+<div class="hero-content">
 
 <h1>
-Discover Premium Products
+
+Premium Products
+
+At Lowest Price
+
 </h1>
 
 <p>
 
-Fast Delivery • COD Available • Secure Payment
+Bangladesh's Smart Low Price Shopping Platform
 
 </p>
 
-<button>
+<a href="shop.html" class="btn">
 
 Shop Now
 
-</button>
+</a>
 
 </div>
 
-<div class="hero-image">
+<img
+class="hero-image"
+src="assets/images/hero.png">
 
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800" alt="">
+</div>
+
+<div class="side-banner">
+
+<div class="offer-card">
+
+<h3>Flash Sale</h3>
+
+<span>Up To 70% OFF</span>
+
+</div>
+
+<div class="offer-card">
+
+<h3>Free Delivery</h3>
+
+<span>Selected Products</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CATEGORY -->
+
+<section class="category">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Categories
+
+</h2>
+
+</div>
+
+<div class="category-grid"
+
+id="categoryGrid">
+
+</div>
 
 </div>
 
 </section>
 
-<section class="features">
+<!-- FLASH -->
 
-<div class="box">
+<section class="container">
 
-<i class="fa-solid fa-truck"></i>
+<div class="flash-sale">
 
-<h3>Fast Delivery</h3>
+<div class="flash-title">
 
-</div>
-
-<div class="box">
-
-<i class="fa-solid fa-shield"></i>
-
-<h3>Secure Payment</h3>
+🔥 Flash Sale
 
 </div>
 
-<div class="box">
+<div class="countdown">
 
-<i class="fa-solid fa-headset"></i>
+<div class="time-box">12</div>
 
-<h3>24/7 Support</h3>
+<div class="time-box">35</div>
+
+<div class="time-box">18</div>
+
+</div>
 
 </div>
 
 </section>
+
+<!-- PRODUCTS -->
 
 <section class="products">
 
-<h2>Trending Products</h2>
+<div class="container">
 
-<div class="grid">
+<div class="section-title">
+
+<h2>
+
+Trending Products
+
+</h2>
+
+<a href="shop.html">
+
+View All
+
+</a>
+
+</div>
+
+<div
+class="product-grid"
+
+id="productGrid">
+
+</div>
 
 </div>
 
 </section>
 
-<footer>
+<!-- FEATURES -->
+
+<section class="features">
+
+<div class="container">
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+</div>
+
+<h3>
+
+Fast Delivery
+
+</h3>
 
 <p>
 
-©2026 Trend Cart BD
+Delivery All Over Bangladesh
 
 </p>
 
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-shield"></i>
+
+</div>
+
+<h3>
+
+Secure Payment
+
+</h3>
+
+<p>
+
+100% Safe Checkout
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-headset"></i>
+
+</div>
+
+<h3>
+
+24/7 Support
+
+</h3>
+
+<p>
+
+Always Ready To Help
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="container">
+
+<p>
+
+© 2026 Trend Cart BD
+
+All Rights Reserved.
+
+</p>
+
+</div>
+
 </footer>
 
-<script src="script.js"></script>
+<!-- MOBILE NAV -->
+
+<nav class="bottom-nav">
+
+<ul>
+
+<li>
+
+<a class="active" href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+</li>
+
+<li>
+
+<a href="shop.html">
+
+<i class="fa-solid fa-store"></i>
+
+Shop
+
+</a>
+
+</li>
+
+<li>
+
+<a href="cart.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Cart
+
+</a>
+
+</li>
+
+<li>
+
+<a href="wishlist.html">
+
+<i class="fa-regular fa-heart"></i>
+
+Wishlist
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-user"></i>
+
+Account
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<script src="assets/js/app.js"></script>
 
 </body>
 
