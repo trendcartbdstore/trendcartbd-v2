@@ -1323,3 +1323,370 @@ border-radius:999px;
 background:#EDF2F7;
 
 }
+/*========================================
+DARK THEME
+========================================*/
+
+body.dark{
+
+--background:#0F172A;
+--surface:#1E293B;
+--text:#F8FAFC;
+--text-light:#CBD5E1;
+--border:#334155;
+
+background:var(--background);
+color:var(--text);
+
+}
+
+body.dark .header,
+body.dark .card,
+body.dark .product-card,
+body.dark .offer-card,
+body.dark .feature-card,
+body.dark .category-card,
+body.dark .footer,
+body.dark .search-box,
+body.dark .icon-btn{
+
+background:var(--surface);
+
+color:var(--text);
+
+border-color:var(--border);
+
+}
+
+body.dark .search-box input{
+
+color:#fff;
+
+}
+
+body.dark .wishlist{
+
+background:var(--surface);
+
+}
+
+body.dark .time-box{
+
+background:rgba(255,255,255,.08);
+
+}
+
+/*========================================
+MOBILE MENU
+========================================*/
+
+@media(max-width:991px){
+
+.nav{
+
+position:fixed;
+
+top:70px;
+
+left:-100%;
+
+width:280px;
+
+height:calc(100vh - 70px);
+
+background:#fff;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+padding:30px;
+
+gap:20px;
+
+transition:.35s;
+
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+z-index:999;
+
+}
+
+body.dark .nav{
+
+background:var(--surface);
+
+}
+
+.nav.show-menu{
+
+left:0;
+
+}
+
+.nav a{
+
+font-size:17px;
+
+}
+
+}
+
+/*========================================
+FOOTER
+========================================*/
+
+.footer{
+
+background:#111827;
+
+padding:70px 0 30px;
+
+margin-top:80px;
+
+color:#fff;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+margin-bottom:40px;
+
+}
+
+.footer h3{
+
+margin-bottom:18px;
+
+font-size:20px;
+
+}
+
+.footer ul{
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.footer a{
+
+color:#D1D5DB;
+
+transition:.3s;
+
+}
+
+.footer a:hover{
+
+color:#fff;
+
+padding-left:6px;
+
+}
+
+.footer-bottom{
+
+padding-top:25px;
+
+border-top:1px solid rgba(255,255,255,.1);
+
+text-align:center;
+
+font-size:14px;
+
+color:#CBD5E1;
+
+}
+
+/*========================================
+NEWSLETTER
+========================================*/
+
+.newsletter{
+
+display:flex;
+
+gap:10px;
+
+margin-top:15px;
+
+}
+
+.newsletter input{
+
+flex:1;
+
+height:48px;
+
+padding:0 15px;
+
+border:none;
+
+border-radius:12px;
+
+}
+
+.newsletter button{
+
+padding:0 20px;
+
+background:var(--primary);
+
+color:#fff;
+
+border-radius:12px;
+
+}
+
+/*========================================
+BACK TO TOP
+========================================*/
+
+.back-top{
+
+position:fixed;
+
+right:20px;
+
+bottom:90px;
+
+width:52px;
+
+height:52px;
+
+border-radius:50%;
+
+background:var(--primary);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#fff;
+
+font-size:20px;
+
+cursor:pointer;
+
+box-shadow:var(--shadow-md);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:999;
+
+}
+
+.back-top.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+/*========================================
+SKELETON
+========================================*/
+
+.skeleton{
+
+background:linear-gradient(
+90deg,
+#ececec 25%,
+#f8f8f8 37%,
+#ececec 63%
+);
+
+background-size:400% 100%;
+
+animation:skeleton 1.4s ease infinite;
+
+border-radius:12px;
+
+}
+
+@keyframes skeleton{
+
+0%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0 50%;
+
+}
+
+}
+
+/*========================================
+GLASS EFFECT
+========================================*/
+
+.glass{
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.2);
+
+border-radius:20px;
+
+}
+
+/*========================================
+ADMIN COMMON
+========================================*/
+
+.admin-card{
+
+background:var(--surface);
+
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:var(--shadow-sm);
+
+}
+
+.admin-title{
+
+font-size:24px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+}
+
+.table-responsive{
+
+overflow:auto;
+
+border-radius:18px;
+
+}
