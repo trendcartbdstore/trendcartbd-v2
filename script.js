@@ -58,7 +58,9 @@ grid.innerHTML+=`
 
 </p>
 
-<button>Add To Cart</button>
+<button onclick="addToCart(${product.id})">
+🛒 Add To Cart
+</button>
 
 </div>
 
