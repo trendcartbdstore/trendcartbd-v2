@@ -141,3 +141,58 @@ darkBtn.onclick=()=>{
 document.body.classList.toggle("dark");
 
 };
+// =======================
+// TREND CART BD CART
+// =======================
+
+let cart = JSON.parse(localStorage.getItem("trendcart")) || [];
+
+function saveCart(){
+    localStorage.setItem("trendcart", JSON.stringify(cart));
+}
+
+function addToCart(id){
+
+    const product = products.find(p => p.id === id);
+
+    const exist = cart.find(item => item.id === id);
+
+    if(exist){
+
+        exist.qty++;
+
+    }else{
+
+        cart.push({
+            ...product,
+            qty:1
+        });
+
+    }
+
+    saveCart();
+
+    updateCartCount();
+
+    alert(product.name + " Added Successfully");
+}
+
+function updateCartCount(){
+
+    const count=document.querySelector(".cart-count");
+
+    if(!count) return;
+
+    let total=0;
+
+    cart.forEach(item=>{
+
+        total+=item.qty;
+
+    });
+
+    count.innerHTML=total;
+
+}
+
+updateCartCount();
