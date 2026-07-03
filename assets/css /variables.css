@@ -1,71 +1,31 @@
 :root{
 
-/*========== COLORS ==========*/
+--primary:#ff4d00;
+--secondary:#111827;
+--background:#f5f6fa;
+--surface:#ffffff;
+--text:#111827;
+--text-light:#6b7280;
+--border:#e5e7eb;
 
---primary:#0B5FFF;
---primary-hover:#0848C7;
---secondary:#FF7A00;
+--shadow-sm:0 2px 8px rgba(0,0,0,.08);
+--shadow-md:0 8px 20px rgba(0,0,0,.12);
 
---success:#16A34A;
---danger:#DC2626;
---warning:#FACC15;
+}
 
---white:#FFFFFF;
---black:#111827;
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:var(--background);
+color:var(--text);
+}
 
---background:#F8FAFC;
---surface:#FFFFFF;
+a{
+text-decoration:none;
+color:inherit;
+}
 
---text:#1F2937;
---text-light:#6B7280;
-
---border:#E5E7EB;
-
-
-/*========== FONT ==========*/
-
---font-logo:"Chunk Five", serif;
-
---font-bn:"Li Alinur Sangbadpatra 2", sans-serif;
-
---font-en:"Inter", sans-serif;
-
-
-/*========== SIZE ==========*/
-
---header-height:70px;
-
---bottom-nav-height:70px;
-
---container:1400px;
-
-
-/*========== BORDER RADIUS ==========*/
-
---radius-xs:6px;
-
---radius-sm:10px;
-
---radius-md:14px;
-
---radius-lg:18px;
-
---radius-xl:24px;
-
---radius-full:999px;
-
-
-/*========== SHADOW ==========*/
-
---shadow-sm:0 4px 12px rgba(0,0,0,.08);
-
---shadow-md:0 10px 30px rgba(0,0,0,.10);
-
---shadow-lg:0 20px 45px rgba(0,0,0,.15);
-
-
-/*========== TRANSITION ==========*/
-
---transition:.30s ease;
-
+.container{
+width:90%;
+margin:auto;
 }
