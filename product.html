@@ -1,151 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>Product Details | Trend Cart BD</title>
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/variables.css">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/mobile.css">
 
-<style>
-body{
-background:#f5f7fb;
-font-family:Poppins,sans-serif;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-}
-
-.main-image img{
-width:100%;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
-
-.thumbs{
-display:flex;
-gap:10px;
-margin-top:15px;
-}
-
-.thumbs img{
-width:80px;
-height:80px;
-border-radius:10px;
-cursor:pointer;
-object-fit:cover;
-border:2px solid transparent;
-}
-
-.thumbs img:hover{
-border-color:#0b3ea9;
-}
-
-.price{
-font-size:32px;
-color:#0b3ea9;
-font-weight:700;
-}
-
-.old{
-text-decoration:line-through;
-color:#888;
-margin-left:10px;
-}
-
-button{
-padding:15px 30px;
-margin-top:20px;
-background:#0b3ea9;
-color:white;
-border:none;
-border-radius:12px;
-cursor:pointer;
-font-size:18px;
-}
-
-button:hover{
-background:#ff6b00;
-}
-
-.review{
-margin-top:40px;
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
-.star{
-color:gold;
-font-size:22px;
-}
-
-@media(max-width:768px){
-.container{
-grid-template-columns:1fr;
-}
-}
-</style>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
+<header class="header">
+
 <div class="container">
 
-<div>
+<a href="index.html" class="logo">
 
-<div class="main-image">
-<img id="mainImg" src="https://picsum.photos/600/500?1">
+Trend<span>Cart</span> BD
+
+</a>
+
+<nav class="nav">
+
+<a href="index.html">Home</a>
+
+<a href="shop.html">Shop</a>
+
+<a href="#" class="active">Product</a>
+
+</nav>
+
+<div class="header-action">
+
+<a href="wishlist.html" class="icon-btn">
+
+<i class="fa-regular fa-heart"></i>
+
+<span class="badge">0</span>
+
+</a>
+
+<a href="cart.html" class="icon-btn">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span class="badge">0</span>
+
+</a>
+
 </div>
 
-<div class="thumbs">
+</div>
 
-<img src="https://picsum.photos/600/500?1" onclick="change(this.src)">
-<img src="https://picsum.photos/600/500?2" onclick="change(this.src)">
-<img src="https://picsum.photos/600/500?3" onclick="change(this.src)">
-<img src="https://picsum.photos/600/500?4" onclick="change(this.src)">
+</header>
+
+<section class="products">
+
+<div class="container">
+
+<div class="product-details">
+
+<div class="product-gallery">
+
+<img id="productImage"
+
+src="assets/products/blender.png"
+
+alt="Product">
 
 </div>
 
+<div class="product-summary">
+
+<h1 id="productTitle">
+
+Portable Blender
+
+</h1>
+
+<div class="rating">
+
+★★★★★
+
 </div>
 
-<div>
+<h2 class="price">
 
-<h1>Portable Blender</h1>
-
-<p class="price">
 ৳1290
-<span class="old">৳1690</span>
+
+<span class="old-price">
+
+৳1690
+
+</span>
+
+</h2>
+
+<p id="productDescription">
+
+Premium quality portable rechargeable blender.
+
+Perfect for juice, smoothies and protein shake.
+
 </p>
 
-<p>
-Premium Portable Blender for Home & Travel.
-USB Rechargeable | High Speed | Food Grade Material.
-</p>
+<div style="margin:25px 0;display:flex;gap:15px;">
 
-<button>🛒 Add To Cart</button>
+<button class="btn"
 
-<button style="background:#25D366">
-💬 Order on WhatsApp
+id="addCart">
+
+Add To Cart
+
 </button>
 
-<div class="review">
+<button class="btn btn-orange">
 
-<h2>Customer Reviews</h2>
+Buy Now
 
-<p class="star">★★★★★</p>
+</button>
+
+</div>
 
 <p>
-Very good quality. Fast delivery. Highly recommended.
+
+Availability :
+
+<span class="stock">
+
+In Stock
+
+</span>
+
 </p>
 
 </div>
@@ -154,11 +151,106 @@ Very good quality. Fast delivery. Highly recommended.
 
 </div>
 
-<script>
-function change(src){
-document.getElementById("mainImg").src=src;
-}
-</script>
+</section>
+
+<section class="products">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Related Products
+
+</h2>
+
+</div>
+
+<div class="product-grid"
+
+id="relatedProducts">
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-bottom">
+
+© 2026 Trend Cart BD
+
+</div>
+
+</div>
+
+</footer>
+
+<nav class="bottom-nav">
+
+<ul>
+
+<li>
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+</li>
+
+<li>
+
+<a href="shop.html">
+
+<i class="fa-solid fa-store"></i>
+
+Shop
+
+</a>
+
+</li>
+
+<li>
+
+<a href="cart.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Cart
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-user"></i>
+
+Account
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<script src="assets/js/app.js"></script>
+
+<script src="assets/js/product.js"></script>
 
 </body>
+
 </html>
