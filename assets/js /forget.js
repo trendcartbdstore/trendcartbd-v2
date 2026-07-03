@@ -1,116 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
+/*==========================================
+TREND CART BD
+FORGOT PASSWORD
+==========================================*/
 
-<head>
+const sendOtp=document.getElementById("sendOtp");
 
-<meta charset="UTF-8">
+const resetPassword=document.getElementById("resetPassword");
 
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+let generatedOtp="";
 
-<title>Forgot Password | Trend Cart BD</title>
+/*==========================================
+SEND OTP
+==========================================*/
 
-<link rel="stylesheet" href="assets/css/variables.css">
-<link rel="stylesheet" href="assets/css/fonts.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/mobile.css">
+sendOtp.onclick=()=>{
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+const user=document.getElementById("user").value.trim();
 
-</head>
+if(user===""){
 
-<body>
+alert("Enter Email or Phone");
 
-<header class="header">
+return;
 
-<div class="container">
+}
 
-<a href="index.html" class="logo">
+generatedOtp=
 
-Trend<span>Cart</span> BD
+Math.floor(100000+Math.random()*900000).toString();
 
-</a>
+alert(
 
-</div>
+"Demo OTP : "+generatedOtp
 
-</header>
+);
 
-<section class="products">
+// Firebase OTP এখানে যোগ হবে
 
-<div class="container">
+};
 
-<div class="card" style="max-width:500px;margin:auto;padding:35px;">
+/*==========================================
+RESET PASSWORD
+==========================================*/
 
-<h2 style="text-align:center;margin-bottom:25px;">
+resetPassword.onclick=()=>{
 
-Forgot Password
+const user=document.getElementById("user").value.trim();
 
-</h2>
+const otp=document.getElementById("otp").value.trim();
 
-<input
-id="user"
-class="input"
-type="text"
-placeholder="Email or Phone">
+const newPassword=document.getElementById("newPassword").value.trim();
 
-<br><br>
+if(otp!==generatedOtp){
 
-<button
-id="sendOtp"
-class="btn"
-style="width:100%;">
+alert("Invalid OTP");
 
-Send OTP
+return;
 
-</button>
+}
 
-<br><br>
+if(newPassword.length<6){
 
-<input
-id="otp"
-class="input"
-type="text"
-placeholder="Enter OTP">
+alert("Password Minimum 6 Characters");
 
-<br><br>
+return;
 
-<input
-id="newPassword"
-class="input"
-type="password"
-placeholder="New Password">
+}
 
-<br><br>
+let users=
 
-<button
-id="resetPassword"
-class="btn btn-orange"
-style="width:100%;">
+JSON.parse(
 
-Reset Password
+localStorage.getItem("trendcart_users")
 
-</button>
+)||[];
 
-<br><br>
+const index=users.findIndex(account=>
 
-<p style="text-align:center;">
+account.email===user ||
 
-<a href="login.html">
+account.phone===user
 
-Back To Login
+);
 
-</a>
+if(index===-1){
 
-</p>
+alert("Account Not Found");
 
-</div>
+return;
 
-</div>
+}
 
-</section>
+users[index].password=newPassword;
 
-<script src="assets/js/forgot.js"></script>
+localStorage.setItem(
 
-</body>
+"trendcart_users",
 
-</html>
+JSON.stringify(users)
+
+);
+
+alert(
+
+"Password Reset Successful"
+
+);
+
+window.location.href="login.html";
+
+};
+
+/*==========================================
+FIREBASE READY
+==========================================*/
+
+// Firebase Phone OTP
+// Email OTP
+// reCAPTCHA
+// Password Reset Link
+// SMS Gateway
+// Email Gateway
+// Multi Device Security
