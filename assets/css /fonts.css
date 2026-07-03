@@ -1,0 +1,35 @@
+/*======================================
+  TREND CART BD FONT SYSTEM
+======================================*/
+
+@font-face{
+    font-family:"Chunk Five";
+    src:url("../fonts/ChunkFive.ttf") format("truetype");
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face{
+    font-family:"Li Alinur Sangbadpatra 2";
+    src:url("../fonts/LiAlinurSangbadpatra2.ttf") format("truetype");
+    font-weight:normal;
+    font-style:normal;
+}
+
+/* English */
+
+.font-en{
+    font-family:var(--font-en);
+}
+
+/* Bangla */
+
+.font-bn{
+    font-family:var(--font-bn);
+}
+
+/* Logo */
+
+.font-logo{
+    font-family:var(--font-logo);
+}
