@@ -1,0 +1,272 @@
+/*==========================================
+TREND CART BD
+REGISTER SYSTEM
+==========================================*/
+
+const registerBtn=document.getElementById("registerBtn");
+
+const fullName=document.getElementById("fullName");
+const email=document.getElementById("email");
+const phone=document.getElementById("phone");
+const password=document.getElementById("password");
+const confirmPassword=document.getElementById("confirmPassword");
+const referral=document.getElementById("referral");
+const agree=document.getElementById("agree");
+
+/*==========================================
+LOAD USERS
+==========================================*/
+
+let users=
+
+JSON.parse(
+
+localStorage.getItem("trendcart_users")
+
+)||[];
+
+
+/*==========================================
+REGISTER
+==========================================*/
+
+if(registerBtn){
+
+registerBtn.onclick=()=>{
+
+const name=fullName.value.trim();
+
+const mail=email.value.trim().toLowerCase();
+
+const mobile=phone.value.trim();
+
+const pass=password.value.trim();
+
+const confirm=confirmPassword.value.trim();
+
+const ref=referral.value.trim();
+
+if(name==""){
+
+alert("Enter Full Name");
+
+return;
+
+}
+
+if(mail==""){
+
+alert("Enter Email");
+
+return;
+
+}
+
+if(mobile==""){
+
+alert("Enter Phone Number");
+
+return;
+
+}
+
+if(pass.length<6){
+
+alert("Password Minimum 6 Characters");
+
+return;
+
+}
+
+if(pass!==confirm){
+
+alert("Password Doesn't Match");
+
+return;
+
+}
+
+if(!agree.checked){
+
+alert("Accept Terms & Privacy Policy");
+
+return;
+
+}
+
+
+/*==========================================
+UNIQUE EMAIL
+==========================================*/
+
+const emailExist=
+
+users.find(user=>user.email===mail);
+
+if(emailExist){
+
+alert("Email Already Registered");
+
+return;
+
+}
+
+
+/*==========================================
+UNIQUE PHONE
+==========================================*/
+
+const phoneExist=
+
+users.find(user=>user.phone===mobile);
+
+if(phoneExist){
+
+alert("Phone Already Registered");
+
+return;
+
+}
+
+
+/*==========================================
+SAVE USER
+==========================================*/
+
+const account={
+
+id:"TCBD"+Date.now(),
+
+name:name,
+
+email:mail,
+
+phone:mobile,
+
+password:pass,
+
+referral:ref,
+
+wallet:0,
+
+role:"Customer",
+
+status:"Active",
+
+created:new Date().toLocaleString()
+
+};
+
+users.push(account);
+
+localStorage.setItem(
+
+"trendcart_users",
+
+JSON.stringify(users)
+
+);
+
+
+/*==========================================
+AUTO LOGIN
+==========================================*/
+
+localStorage.setItem(
+
+"trendcart_user",
+
+JSON.stringify(account)
+
+);
+
+alert(
+
+"Registration Successful"
+
+);
+
+window.location.href="customer/dashboard.html";
+
+};
+
+}
+
+
+/*==========================================
+EMAIL CHECK
+==========================================*/
+
+email.onblur=()=>{
+
+const mail=email.value.trim().toLowerCase();
+
+const exist=
+
+users.find(user=>user.email===mail);
+
+if(exist){
+
+alert("Email Already Used");
+
+}
+
+};
+
+
+/*==========================================
+PHONE CHECK
+==========================================*/
+
+phone.onblur=()=>{
+
+const mobile=phone.value.trim();
+
+const exist=
+
+users.find(user=>user.phone===mobile);
+
+if(exist){
+
+alert("Phone Already Used");
+
+}
+
+};
+
+
+/*==========================================
+PASSWORD STRENGTH
+==========================================*/
+
+password.onkeyup=()=>{
+
+const pass=password.value;
+
+if(pass.length<6){
+
+password.style.borderColor="red";
+
+}else{
+
+password.style.borderColor="green";
+
+}
+
+};
+
+
+/*==========================================
+FIREBASE READY
+==========================================*/
+
+// Firebase Authentication
+// Email Verification
+// Phone OTP Verification
+// OTP Registration
+// Google Login
+// Facebook Login
+// Referral Commission
+// Affiliate Auto Link
+// Welcome Email
+// Cloud Firestore Save
